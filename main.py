@@ -1,8 +1,3 @@
-""" game very loosely based off of majora's mask with the day system 
-as time goes on random (lunar?) events happen that affect the game and character (mostly to be implemented)
-shop where you can buy time potions to extend the time you have before you die
-"""
-
 import time
 import random
 import sys
