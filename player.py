@@ -7,11 +7,12 @@ def purple(text): print("\033[95m {}\033[00m" .format(text)),
 def yellow(text): print("\033[93m {}\033[00m" .format(text)),
 
 class Player:
-    def __init__(self):
+    def __init__(self, player_name):
         self.health = 100
         self.luck = 0
         self.junk = 0
         self.gold = 0
+        self.name = player_name
 
     def find_charm(self):
         red("\n******")

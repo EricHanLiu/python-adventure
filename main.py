@@ -12,13 +12,13 @@ def red(text): print("\033[91m {}\033[00m" .format(text)),
 def purple(text): print("\033[95m {}\033[00m" .format(text)),
 def yellow(text): print("\033[93m {}\033[00m" .format(text)),
 
-player = Player()
+player_name = raw_input('What is your name?\n')
+player = Player(player_name)
 game = Game(player)
 fight = Fight(player, game)
 help = Help()
 shop = Shop(player, game)
 print(chr(27) + "[2J")
-player_name = raw_input('What is your name?\n')
 print(chr(27) + "[2J")
 red("\nWelcome to Polandia, %s" % player_name)
 

@@ -31,7 +31,8 @@ class Game():
     def info(self):
         #time.sleep(2)
         red("\n_______________________________________________________________________")
-        purple("\n\nDay: %s" % self.day)
+        purple("\n\nName: %s" % self.player.name)
+        purple("\nDay: %s" % self.day)
         if self.day % 5 == 0:
             red("                        %s" % self.odd_sky[self.sky])
             self.player.luck += 1
