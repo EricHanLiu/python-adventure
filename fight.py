@@ -40,7 +40,7 @@ class Fight:
             print
             print "You have died!"
             time.sleep(2)
-            game.quit()
+            self.game.quit()
         
     def fight(self):
         #time.sleep(1)
