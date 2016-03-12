@@ -1,10 +1,8 @@
 import time
 import random
 import sys
+import c
 
-def red(text): print("\033[91m {}\033[00m" .format(text)),
-def purple(text): print("\033[95m {}\033[00m" .format(text)),
-def yellow(text): print("\033[93m {}\033[00m" .format(text)),
 
 MONSTERS = [
     # Monster name: the amount of damage it does: amount of base gold it gives (multiplied with luck): resilience to charm or dmg
@@ -23,7 +21,7 @@ class Fight:
     def encounter(self): 
         self.chance = self.player.luck * random.randint(0,4)
         self.monster = random.choice(MONSTERS)    
-        red("\n******")
+        c.red("\n******")
         print
         print "You encountered", self.monster["name"]
         print "1: Fight"
@@ -40,7 +38,7 @@ class Fight:
             print
             print "You have died!"
             time.sleep(2)
-            game.quit()
+            self.game.quit()
         
     def fight(self):
         #time.sleep(1)
@@ -51,16 +49,16 @@ class Fight:
             print "You gained the upper hand!"
             #time.sleep(1)
             self.player.gold += self.monster["gold"] * 2
-            yellow("Gold +%d" % (self.monster["gold"] * 2))
+            c.yellow("Gold +%d" % (self.monster["gold"] * 2))
             print
-            red("Health -%d" % (self.monster["damage"] / 5))
+            c.red("Health -%d" % (self.monster["damage"] / 5))
             self.player.health -= self.monster["damage"] / 5
         else:
             #YOU TAKE NORMAL DAMAGE AND GET NORMAL GOLD
             self.player.gold += self.monster["gold"]
-            yellow("Gold +%d" % self.monster["gold"])
+            c.yellow("Gold +%d" % self.monster["gold"])
             print
-            red("Health -%d" % (self.monster["damage"]))
+            c.red("Health -%d" % (self.monster["damage"]))
             self.player.health -= self.monster["damage"]
 
     def charm(self):
@@ -70,9 +68,9 @@ class Fight:
             print "Attempt successful!"
             self.player.gold += self.monster["gold"] * 4
             print
-            yellow("Gold +%d" % (self.monster["gold"] * 4))
+            c.yellow("Gold +%d" % (self.monster["gold"] * 4))
         else:          
             print "Attempt failed!"
             print "You have enraged it!"
-            red("Health -%d" % (self.monster["damage"] * 2))
+            c.red("Health -%d" % (self.monster["damage"] * 2))
             self.player.health -= self.monster["damage"] * 2

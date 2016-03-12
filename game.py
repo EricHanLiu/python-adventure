@@ -1,10 +1,11 @@
 import time
 import random
 import sys
+import c
 
-def red(text): print("\033[91m {}\033[00m" .format(text)),
-def purple(text): print("\033[95m {}\033[00m" .format(text)),
-def yellow(text): print("\033[93m {}\033[00m" .format(text)),
+#def red(text): print("\033[91m {}\033[00m" .format(text)),
+#def purple(text): print("\033[95m {}\033[00m" .format(text)),
+#def yellow(text): print("\033[93m {}\033[00m" .format(text)),
 
 class Game(): 
     sky_event = ["pleasant", "terrible", "beautiful", "dark", "pretty", "horrid", "scary"]
@@ -30,25 +31,26 @@ class Game():
 
     def info(self):
         #time.sleep(2)
-        red("\n_______________________________________________________________________")
-        purple("\n\nName: %s" % self.player.name)
-        purple("\nDay: %s" % self.day)
+        c.red("\n_______________________________________________________________________")
+        c.purple("\n\nName: %s" % self.player.name)
+        c.purple("\nDay: %s" % self.day)
         if self.day % 5 == 0:
-            red("                        %s" % self.odd_sky[self.sky])
+            c.red("                        %s" % self.odd_sky[self.sky])
             self.player.luck += 1
         else:
             print "		             The sky looks", self.sky_event[random.choice(range(6))], "today."
-        red("\n_______________________________________________________________________")
-        purple("\n\nHealth: %d" % self.player.health)
-        purple("                       		Junk: %d" % self.player.junk)
+        c.red("\n_______________________________________________________________________")
+        c.purple("\n\nHealth: %d" % self.player.health)
+        c.purple("                       		Junk: %d" % self.player.junk)
         #time.sleep(2)
-        yellow("\n\nLuck: %d" % self.player.luck) 
-        yellow("                    	      		Gold: %d" % self.player.gold)
-        red("\n_______________________________________________________________________")
+        c.yellow("\n\nLuck: %d" % self.player.luck) 
+        c.yellow("                    	      		Gold: %d" % self.player.gold)
+        c.red("\n_______________________________________________________________________")
         #time.sleep(2)
+        print
         print "\n\nWhat would you like to do?\n"
-        print "1: Walk\n"
-        print "2: Rest\n"
-        print "3: Shop\n"
-        print "4: Quit\n"
-        print "H: Help\n"
+        print "1: Walk"
+        print "2: Rest"
+        print "3: Shop"
+        print "4: Quit"
+        print "H: Help"

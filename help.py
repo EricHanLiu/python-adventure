@@ -1,19 +1,18 @@
 import time
 import random
 import sys
+import c
 
-def red(text): print("\033[91m {}\033[00m" .format(text)),
-def purple(text): print("\033[95m {}\033[00m" .format(text)),
-def yellow(text): print("\033[93m {}\033[00m" .format(text)),
 
 class Help:
     def display(self):
-        purple("Welcome to the help module.\n")
+        c.purple("Welcome to the help module.\n")
         print "What would you like information on?\n"
         print "1: How do days work?\n"
         print "2: How do shop items work?\n"
         print "3: How does resting work?\n"
         print "4: How does walking work?\n"
+        print "5: Leave help screen."
         n = input()
         print
         if n == 1:
@@ -25,7 +24,10 @@ class Help:
         elif n == 4:
             self.walk_info()
         else:
-            print "Invalid input! Leaving help screen."
+            print "Leaving help screen."
+        print "Type any key to continue..."
+        raw_input()
+
 
     def day_info(self):
         print "The game works on a day system that advances based on player actions. Resting or walking both advance the day, while browsing the shop does not. Every 5 days the player will notice a unique event in the sky, and will be granted 1 luck. After a certain amount of these events the game will end and the player will lose, therefore the player must aim to beat the game before this happens (info on how to do this in the shop items info). "

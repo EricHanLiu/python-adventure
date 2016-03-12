@@ -1,10 +1,8 @@
 import time
 import random
 import sys
+import c
 
-def red(text): print("\033[91m {}\033[00m" .format(text)),
-def purple(text): print("\033[95m {}\033[00m" .format(text)),
-def yellow(text): print("\033[93m {}\033[00m" .format(text)),
 
 class Shop:
     def __init__(self, player, game):
@@ -12,7 +10,7 @@ class Shop:
         self.game = game
 
     def display(self):
-        red("\n_______________________________________________________________________")
+        c.red("\n_______________________________________________________________________")
         print
         print
         print "Welcome to the shop."
@@ -25,31 +23,31 @@ class Shop:
         
     def browse(self):
         #time.sleep(1)
-        red("\n_______________________________________________________________________")
+        c.red("\n_______________________________________________________________________")
         print
         print
-        yellow("Gold: %s" % self.player.gold)
+        c.yellow("Gold: %s" % self.player.gold)
         print
-        purple("Item                       Price                       Effect")
-        red("\n_______________________________________________________________________")
+        c.purple("Item                       Price                       Effect")
+        c.red("\n_______________________________________________________________________")
         print
-        yellow("1: Heart Piece             100                         +50 Health")
-        print
-        print
-        yellow("2: Charm                   120                         +1 Luck")
+        c.yellow("1: Heart Piece             100                         +50 Health")
         print
         print
-        yellow("3: Time Shard              150                         -5 Days")
+        c.yellow("2: Charm                   120                         +1 Luck")
         print
         print
-        yellow("4: Time Piece              300                         -10 Days")
+        c.yellow("3: Time Shard              150                         -5 Days")
         print
         print
-        yellow("5: Time Gem                5000                        Restores Peace")   
+        c.yellow("4: Time Piece              300                         -10 Days")
+        print
+        print
+        c.yellow("5: Time Gem                5000                        Restores Peace")   
         print
         n = input()
         print(chr(27) + "[2J")
-        red("\n******")   
+        c.red("\n******")   
         print
         if n == 1 and self.player.gold >= 100:
             print "You have purchased a Heart Piece!"
@@ -88,4 +86,4 @@ class Shop:
             #time.sleep(2)
             self.game.quit()
         else:
-            red("Not enough gold!")
+            c.red("Not enough gold!")
