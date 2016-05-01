@@ -65,11 +65,13 @@ class Fight:
         print "Attempting to charm..."
         #time.sleep(1)
         if self.chance > self.monster["res"]:
+            #YOU GAIN 4x GOLD AND TAKE NO DMG
             print "Attempt successful!"
             self.player.gold += self.monster["gold"] * 4
             print
             c.yellow("Gold +%d" % (self.monster["gold"] * 4))
         else:          
+            #YOU GAIN NO GOLD AND TAKE 2x DAMAGE
             print "Attempt failed!"
             print "You have enraged it!"
             c.red("Health -%d" % (self.monster["damage"] * 2))
