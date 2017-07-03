@@ -30,8 +30,8 @@ class Game():
         sys.exit(0)
 
     def info(self):
-        #time.sleep(2)
         c.red("\n_______________________________________________________________________")
+        time.sleep(2)
         c.purple("\n\nName: %s" % self.player.name)
         c.purple("\nDay: %s" % self.day)
         if self.day % 5 == 0:
@@ -42,11 +42,11 @@ class Game():
         c.red("\n_______________________________________________________________________")
         c.purple("\n\nHealth: %d" % self.player.health)
         c.purple("                       		Junk: %d" % self.player.junk)
-        #time.sleep(2)
+        time.sleep(2)
         c.yellow("\n\nLuck: %d" % self.player.luck) 
         c.yellow("                    	      		Gold: %d" % self.player.gold)
         c.red("\n_______________________________________________________________________")
-        #time.sleep(2)
+        time.sleep(2)
         print
         print "\n\nWhat would you like to do?\n"
         print "1: Walk"
