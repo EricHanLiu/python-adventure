@@ -13,7 +13,7 @@ def purple(text): print("\033[95m {}\033[00m" .format(text)),
 def yellow(text): print("\033[93m {}\033[00m" .format(text)),
 
 print(chr(27) + "[2J")
-player_name = raw_input('What is your name?\n')
+player_name = input('What is your name?\n')
 player = Player(player_name)
 game = Game(player)
 fight = Fight(player, game)
@@ -24,10 +24,10 @@ red("\nWelcome to Polandia, %s" % player_name)
 
 while True:
     game.info()
-    choice = raw_input()
-    print
+    choice = input()
+    print()
     print(chr(27) + "[2J")
-    print
+    print()
     if choice == '1':
         if (player.walk() == 1):
             fight.encounter()
@@ -42,6 +42,6 @@ while True:
         help.display()
         continue
     else:
-        print "Invalid Choice"
+        print("Invalid Choice")
         continue    
     game.advance_day()

@@ -22,57 +22,59 @@ class Fight:
         self.chance = self.player.luck * random.randint(0,4)
         self.monster = random.choice(MONSTERS)    
         c.red("\n******")
-        print
-        print "You encountered", self.monster["name"]
-        print "1: Fight"
-        print "2: Charm"
-        print "3: Run"
+        print()
+        print("You encountered", self.monster["name"])
+        print("1: Fight")
+        print("2: Charm")
+        print("3: Run")
         n = input()
-        if n == 1:
+        if n == '1':
             self.fight()
-        elif n == 2:
+        elif n == '2':
             self.charm()
         else:
-            print "After a day of running away, you finally escape your pursuer."
+            print("After a day of running away, you finally escape your pursuer.")
         if self.player.health <= 0:
-            print
-            print "You have died!"
-            time.sleep(2)
+            print()
+            print("You have died!")
+            #time.sleep(2)
             self.game.quit()
         
     def fight(self):
-        time.sleep(1)
-        print "You attacked!"
-        time.sleep(1)
+        #time.sleep(1)
+        print("You attacked!")
+        #time.sleep(1)
         if self.chance >= self.monster["res"] - 1:
             #YOU TAKE 1/5 DAMAGE AND DOUBLE GOLD
-            print "You gained the upper hand!"
-            time.sleep(1)
+            print("You gained the upper hand!")
+            #time.sleep(1)
             self.player.gold += self.monster["gold"] * 2
             c.yellow("Gold +%d" % (self.monster["gold"] * 2))
-            print
+            print()
             c.red("Health -%d" % (self.monster["damage"] / 5))
             self.player.health -= self.monster["damage"] / 5
         else:
             #YOU TAKE NORMAL DAMAGE AND GET NORMAL GOLD
             self.player.gold += self.monster["gold"]
             c.yellow("Gold +%d" % self.monster["gold"])
-            print
+            print()
             c.red("Health -%d" % (self.monster["damage"]))
             self.player.health -= self.monster["damage"]
 
     def charm(self):
-        print "Attempting to charm..."
-        time.sleep(1)
+        print("Attempting to charm...")
+        #time.sleep(1)
         if self.chance > self.monster["res"]:
             #YOU GAIN 4x GOLD AND TAKE NO DMG
-            print "Attempt successful!"
+            print("Attempt successful!")
             self.player.gold += self.monster["gold"] * 4
-            print
+            print()
             c.yellow("Gold +%d" % (self.monster["gold"] * 4))
         else:          
             #YOU GAIN NO GOLD AND TAKE 2x DAMAGE
-            print "Attempt failed!"
-            print "You have enraged it!"
+            print("Attempt failed!")
+            print("You have enraged it!")
             c.red("Health -%d" % (self.monster["damage"] * 2))
             self.player.health -= self.monster["damage"] * 2
+
+

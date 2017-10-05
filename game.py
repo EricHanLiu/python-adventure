@@ -21,36 +21,37 @@ class Game():
         if self.day % 5 == 0:
             self.sky += 1
         if self.day == 36:
-            print "\nTHE MOON HAS CRASHED INTO THE EARTH, KILLING EVERYONE"
+            print("\nTHE MOON HAS CRASHED INTO THE EARTH, KILLING EVERYONE")
             self.quit()
 
     def quit(self):
-        print
-        print "Game Over"
+        print()
+        print("Game Over")
         sys.exit(0)
 
     def info(self):
         c.red("\n_______________________________________________________________________")
-        time.sleep(2)
+        #time.sleep(2)
         c.purple("\n\nName: %s" % self.player.name)
         c.purple("\nDay: %s" % self.day)
         if self.day % 5 == 0:
             c.red("                        %s" % self.odd_sky[self.sky])
             self.player.luck += 1
         else:
-            print "		             The sky looks", self.sky_event[random.choice(range(6))], "today."
+            print("		             The sky looks", self.sky_event[random.choice(range(6))], "today.")
         c.red("\n_______________________________________________________________________")
         c.purple("\n\nHealth: %d" % self.player.health)
         c.purple("                       		Junk: %d" % self.player.junk)
-        time.sleep(2)
+        #time.sleep(2)
         c.yellow("\n\nLuck: %d" % self.player.luck) 
         c.yellow("                    	      		Gold: %d" % self.player.gold)
         c.red("\n_______________________________________________________________________")
-        time.sleep(2)
-        print
-        print "\n\nWhat would you like to do?\n"
-        print "1: Walk"
-        print "2: Rest"
-        print "3: Shop"
-        print "4: Quit"
-        print "H: Help"
+        print()
+        print()
+        #time.sleep(2)
+        print("1: Explore")
+        print("2: Rest")
+        print("3: Shop")
+        print("4: Quit")
+        print("H: Help")
+        print()
