@@ -66,7 +66,7 @@ class Shop:
             self.game.sky -= 1
             print("What's going on?...")
             #time.sleep(5)
-            print("You have gone back 5 days in #time!")
+            print("You have gone back 5 days in time!")
         elif n == '4' and self.player.gold >= 300:
             print("You have purchased a Time Piece!")
             self.player.gold -= 300
@@ -74,7 +74,7 @@ class Shop:
             self.game.sky -= 2
             print("What's going on?......")
             #time.sleep(10)
-            print("You have gone back 10 days in #time!") 
+            print("You have gone back 10 days in time!") 
         elif n == '5' and self.player.gold >= 5000:
             print("You have purchased a Time Gem!")
             self.player.gold -= 5000
