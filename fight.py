@@ -37,17 +37,17 @@ class Fight:
         if self.player.health <= 0:
             print()
             print("You have died!")
-            #time.sleep(2)
+            time.sleep(2)
             self.game.quit()
         
     def fight(self):
-        #time.sleep(1)
+        time.sleep(1)
         print("You attacked!")
-        #time.sleep(1)
+        time.sleep(1)
         if self.chance >= self.monster["res"] - 1:
             #YOU TAKE 1/5 DAMAGE AND DOUBLE GOLD
             print("You gained the upper hand!")
-            #time.sleep(1)
+            time.sleep(1)
             self.player.gold += self.monster["gold"] * 2
             c.yellow("Gold +%d" % (self.monster["gold"] * 2))
             print()
@@ -63,7 +63,7 @@ class Fight:
 
     def charm(self):
         print("Attempting to charm...")
-        #time.sleep(1)
+        time.sleep(1)
         if self.chance > self.monster["res"]:
             #YOU GAIN 4x GOLD AND TAKE NO DMG
             print("Attempt successful!")

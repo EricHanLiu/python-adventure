@@ -36,10 +36,10 @@ class Player:
 
     def rest(self):
         print("\nYou are resting.")
-        #time.sleep(1)
+        time.sleep(1)
         print("\nYou have", self.junk, "pieces of junk.")
         print("You have", self.luck, "luck.")
-        #time.sleep(1)
+        time.sleep(1)
         print("\n1: Sleep and heal.")
         print("2: Refine junk (requires luck).")
         n = input()

@@ -31,7 +31,7 @@ class Game():
 
     def info(self):
         c.red("\n_______________________________________________________________________")
-        #time.sleep(2)
+        time.sleep(2)
         c.purple("\n\nName: %s" % self.player.name)
         c.purple("\nDay: %s" % self.day)
         if self.day % 5 == 0:
@@ -42,13 +42,13 @@ class Game():
         c.red("\n_______________________________________________________________________")
         c.purple("\n\nHealth: %d" % self.player.health)
         c.purple("                       		Junk: %d" % self.player.junk)
-        #time.sleep(2)
+        time.sleep(1)
         c.yellow("\n\nLuck: %d" % self.player.luck) 
         c.yellow("                    	      		Gold: %d" % self.player.gold)
         c.red("\n_______________________________________________________________________")
         print()
         print()
-        #time.sleep(2)
+        time.sleep(1)
         print("1: Explore")
         print("2: Rest")
         print("3: Shop")
