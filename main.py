@@ -20,7 +20,7 @@ fight = Fight(player, game)
 help = Help()
 shop = Shop(player, game)
 print(chr(27) + "[2J")
-red("\nWelcome to Polandia, %s" % player_name)
+red("\nWelcome, %s" % player_name)
 
 while True:
     game.info()
